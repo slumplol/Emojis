@@ -1,51 +1,133 @@
 --creds gunna
 
-local StarId = {
-	[404940011] = true, -- AvengerResembles
+local adminsez = {
+	1420800618,
+	3453843344,
+	1084001826,
+	1146673171,
+	1121086395,
+	6896245514,
 }
 
-local CrownId = {
-       [1420800618] = true, -- DARKKILLERMEGAPS3
-       [3453843344] = true, -- LunaHubDevelopers
-       [1084001826] = true, -- WoizxaScripts
-       [1146673171] = true, -- Robloxian176174710
-       [1121086395] = true, -- KoolioDani
-       [6896245514] = true, -- Tygo
+local serverbooster = {
+	1,
+	2,
+	3,
 }
 
-local DiamondId = {
-	[1] = true,
-	[2] = true,
-	[3] = true,
+local moderators = {
+	404940011,
 }
 
-function premium()
-	for _,v in pairs(game:GetService('Players'):GetChildren()) do
-		if StarId[v.UserId] then
+local premID = {
+	2809416873,
+}
+
+local shitter = {
+	4,
+}
+
+local peaches = {
+	5,
+	6,
+	7,
+	8,
+}
+
+local devil = {
+	9,
+	10,
+}
+
+local starlegend = {
+	11,
+}
+
+local lightning = {
+	12,
+	13,
+}
+
+local purpleheart = {14}
+
+local ailen = {
+	15,
+	16,
+}
+
+local checkmark = {17}
+
+local pumpkin = {18}
+
+----------------------------------/ Loading Area \----------------------------------
+
+local function main()
+	local success, err = pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/slumplol/viplist/main/lua"))()
+	end)
+
+	for i,v in pairs(game.Players:GetChildren()) do
+		if table.find(adminsez,v.UserId) then
 			if v.Character then
-				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐]'..v.DisplayName)
-				end
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[👑]"..v.DisplayName
 			end
-		elseif CrownId[v.UserId] then
+		elseif table.find(moderators,v.UserId) then
 			if v.Character then
-				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑]'..v.DisplayName)
-				end
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[❤️]"..v.DisplayName
 			end
-		elseif DiamondId[v.UserId] then
+		elseif table.find(peaches,v.UserId) then
 			if v.Character then
-				if v.Character.Parent.Name == 'Players' then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[💎]'..v.DisplayName)
-				end
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[🍑]"..v.DisplayName
 			end
-		elseif v.Character then
-			if v.Character.Parent.Name == 'Players' then
-				if not v.Character.UpperTorso:FindFirstChild('BodyBackAttachment') then
-					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌙]'..v.DisplayName)
+		elseif table.find(shitter,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[💩]"..v.DisplayName
+			end
+		elseif table.find(starlegend,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[🌟]"..v.DisplayName
+			end
+		elseif table.find(devil,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[😈]"..v.DisplayName
+			end
+		elseif table.find(ailen,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[👽]"..v.DisplayName
+			end
+		elseif table.find(lightning,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[⚡️]"..v.DisplayName
+			end
+		elseif table.find(purpleheart,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[💜]"..v.DisplayName
+			end
+		elseif table.find(serverbooster,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[🚀]"..v.DisplayName
+			end
+		elseif table.find(checkmark,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[☑️]"..v.DisplayName
+			end
+		elseif table.find(pumpkin,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[🎃]"..v.DisplayName
+			end
+		elseif table.find(premID,v.UserId) then
+			if v.Character then
+				v.Character:FindFirstChild("Humanoid").DisplayName = "[⭐]"..v.DisplayName
+			end
+		else
+			if v.Character then
+				if not v.Character.Head:FindFirstChild("OriginalSize") then
+					v.Character:FindFirstChild("Humanoid").DisplayName = "[🌙]"..v.DisplayName
 				end
 			end
 		end
 	end
 end
-local success,err = pcall(premium)
+local success, err = pcall(main)
+if err then print(err) end
+return premID
